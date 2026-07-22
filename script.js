@@ -225,5 +225,75 @@ function addPost(title,text,date){
 
 
 
+// =====================================
+// LOAD POSTS FROM JSON
+// =====================================
 
+async function loadPosts(){
+
+    const container = document.getElementById("postsContainer");
+
+    if(!container) return;
+
+
+    try{
+
+        const response = await fetch("posts.json");
+
+        const posts = await response.json();
+
+
+        container.innerHTML = "";
+
+
+        posts.forEach(post=>{
+
+
+            const element = document.createElement("div");
+
+
+            element.className = "post";
+
+
+            element.innerHTML = `
+
+            <div class="postTitle">
+                ${post.title}
+            </div>
+
+
+            <div class="postDate">
+                ${post.date}
+            </div>
+
+
+            <div class="postText">
+                ${post.text}
+            </div>
+
+            `;
+
+
+            container.appendChild(element);
+
+
+        });
+
+
+    }catch(error){
+
+
+        console.log(
+            "Ошибка загрузки постов:",
+            error
+        );
+
+
+    }
+
+
+}
+
+
+loadPosts();
 console.log("HEXPNCTb Mini App готов");
