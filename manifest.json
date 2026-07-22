@@ -1,1 +1,10 @@
-
+{
+  "name": "HEXPNCTb Mini App",
+  "short_name": "HEXPNCTb",
+  "description": "Личный Telegram Mini App с постами, проектами и файлами",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#2AABEE",
+  "orientation": "portrait"
+}
